@@ -46,11 +46,11 @@
              [:button {:hx-post "/kill"
                        :style {:margin-top 100}} "Stop server"]]]
            
-            ; JS scripts
-            ;; htmx
+           ; JS scripts
+           ;; htmx
            [:script {:src "https://unpkg.com/htmx.org@1.5.0"}]
 
-            ;; js code to inject CSRF Token into HTMX
+           ;; js code to inject CSRF Token into HTMX
            ;; info: https://github.com/bigskysoftware/htmx/issues/70
            (let [csrf-token (force anti-forgery/*anti-forgery-token*)]
              [:script (format "document.body.addEventListener('htmx:configRequest', (event) => {event.detail.headers['X-CSRF-Token'] = '%s';});"
