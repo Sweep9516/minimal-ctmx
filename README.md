@@ -1,7 +1,7 @@
 # minimal-ctmx
 
 Minimal [ctmx](https://github.com/whamtet/ctmx) example to use [htmx](https://htmx.org/) in clojure. 
-This example uses [http-kit](https://github.com/http-kit/http-kit), [ring](https://github.com/ring-clojure/ring), [reitit](https://github.com/metosin/reitit) & [hiccup](https://github.com/weavejester/hiccup).
+This example uses [http-kit](https://github.com/http-kit/http-kit), [ring](https://github.com/ring-clojure/ring) & [reitit](https://github.com/metosin/reitit).
 
 Ring 'site-defaults' with crsf included. 
 
