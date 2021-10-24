@@ -1,9 +1,10 @@
 # minimal-ctmx
 
 Minimal [ctmx](https://github.com/whamtet/ctmx) example to use [htmx](https://htmx.org/) in clojure. 
-This example uses [http-kit](https://github.com/http-kit/http-kit), [ring](https://github.com/ring-clojure/ring) & [reitit](https://github.com/metosin/reitit).
+This example uses [http-kit](https://github.com/http-kit/http-kit), [ring](https://github.com/ring-clojure/ring) & [reitit](https://github.com/metosin/reitit). It is based on the [sente server example](https://github.com/ptaoussanis/sente/blob/master/example-project/src/example/server.clj). 
 
 Ring 'site-defaults' with crsf included. 
+
 
 Todo: 
 - auto page refresh (hx-refresh? js? ring-refresh?)
