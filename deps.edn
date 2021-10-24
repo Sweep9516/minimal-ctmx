@@ -1,0 +1,29 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.3"}
+
+        ctmx/ctmx {:mvn/version "1.4.3"}
+        http-kit/http-kit {:mvn/version "2.5.3"}
+        metosin/reitit {:mvn/version "0.5.15"}
+
+        ring/ring-core {:mvn/version "1.9.4"}
+        ring/ring-defaults {:mvn/version "0.3.2"}
+        ring/ring-devel {:mvn/version "1.9.4"}}
+ :aliases
+ {:run-m {:main-opts ["-m" "dtou.minimal-ctmx"]}
+  :run-x {:ns-default dtou.minimal-ctmx
+          :exec-fn start-web-server!
+          :exec-args {:port 3000 :dev? true}}
+  :stop-x {:ns-default dtou.minimal-ctmx
+           :exec-fn stop-web-server!}
+  :test {:extra-paths ["test"]
+         :extra-deps {org.clojure/test.check {:mvn/version "1.1.0"}
+                      io.github.cognitect-labs/test-runner
+                      {:git/url "https://github.com/cognitect-labs/test-runner"
+                       :sha "62ef1de18e076903374306060ac0e8a752e57c86"}}
+         :exec-fn cognitect.test-runner.api/test}
+  :uberjar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.267"}}
+            :exec-fn hf.depstar/uberjar
+            :exec-args {:aot true
+                        :jar "minimal-ctmx.jar"
+                        :main-class "dtou.minimal-ctmx"
+                        :sync-pom true}}}}
